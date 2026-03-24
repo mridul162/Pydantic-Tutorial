@@ -1,8 +1,6 @@
 from pydantic import AnyUrl, BaseModel, EmailStr, Field, field_validator
 from typing import List, Dict, Optional, Annotated
 
-from tomlkit import value
-
 class Patient(BaseModel):
     name: Annotated[str, Field(max_length=50, title='Name of the patient', description="Name must be a non-empty string", example="John Doe")]
     email: EmailStr = Field(description="Email must be a valid email address")
